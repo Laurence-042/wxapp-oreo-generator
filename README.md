@@ -11,7 +11,6 @@
 | /oreo               | 本次教程需要用到的资源，内含三张oreo图片                     |
 | /oreo-generator-pre | 写这个教程前为验证可行性与难度评估写的oreo生成器             |
 | /oreo-generator     | 你将随着本次教程做出来的成品，比起上面的少了wx.request演示，但css是优化后的版本 |
-| /oreo-tutorial-img  | 本次教程所用的插图                                           |
 
 # 这个系列将讲些什么
 
@@ -69,41 +68,39 @@
 
 微信小程序官网： https://mp.weixin.qq.com/cgi-bin/wx 
 
-![](oreo-tutorial-img\1.PNG)
+![1.PNG](https://i.loli.net/2019/11/02/gJfpOUty2Q9YnoZ.png)
 
 没错，就是这个。当然，左边的[开发文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)我们稍后也会用到。这个页面也先别关，我们一会儿等待下载开发者工具时可以先去注册账号，有了账号后才能进行微信小程序的发布。等下载时闲着也是闲着对吧（笑）
 
-
-
-![](oreo-tutorial-img\2.PNG)![](oreo-tutorial-img\3.PNG)
+![2.PNG](https://i.loli.net/2019/11/02/A8LFKlJqZeytGrY.png)![3.PNG](https://i.loli.net/2019/11/02/egz2VwsXYSGPt14.png)
 
 好吧，企鹅非常相信各位的信息获取能力，所以刚刚那个“开发者工具”的链接并不是指向下载页面的链接……以及很遗企鹅没有提供Linux的版本……
 
-![](oreo-tutorial-img\4.PNG)
+![4.PNG](https://i.loli.net/2019/11/02/b9w4pEWT5xUosdV.png)
 
 还记得刚刚我们说的要注册嘛？注册入口就在官网的最下面。注册的流程就不赘述了，根据自己的情况填写就是了。信息部分的身份可以填“个人”，放心，这个账号是可以注销的，所以即使以后你去为一个公司开发微信小程序了，现在填个人也不会有什么问题的。
 
 然后当开发工具下载完毕后就可以开始愉悦的敲代码了，当你打开时就会看到微信传统的扫码登陆操作（题外话：微信电脑客户端的强制扫码登录简直有毒，如果我手机在身边为啥要用电脑端嘞）
 
-![](oreo-tutorial-img\5.PNG)
+![5.PNG](https://i.loli.net/2019/11/02/FnkMX4vrjat8ob5.png)
 
-![](oreo-tutorial-img\6.PNG)
+![6.PNG](https://i.loli.net/2019/11/02/UjEzvNox4LHmF7c.png)
 
 当你完成扫码并在手机上确认后就可以看到这个界面了，点击红色部分可以新建一个项目，蓝色部分可以进入管理模式删除项目
 
-![](oreo-tutorial-img\7.PNG)
+![7.PNG](https://i.loli.net/2019/11/02/GW7Lr1HOsSJxEwV.png)
 
 填好项目名称和路径后，由于我们还在练手，所以可以使用测试号，其他保持默认然后新建就行
 
-![](oreo-tutorial-img\8.PNG)
+![8.PNG](https://i.loli.net/2019/11/02/U8TLWKOMHCvo5jE.png)
 
 理论上新建完毕后你将会看到这个界面。左侧为预览，也就是你做出的微信小程序的样子。中间为项目目录结构，右侧为打开的文件内容，下方为开发时会用到的一些工具，当用到它们时会进行介绍的
 
 微信小程序可以有多个页面（pages，比如上图所示的index和logs这两个页面），通常约定俗成地把页面放在pages目录下，并把小程序刚启动时的主页面命名为index。声明哪个页面才是小程序刚启动时的主页面的内容在app.json中，app.json文件的内容为一种叫做JSON的数据格式，常用语复杂的数据传输或配置文件。如果不了解的话可以在[JSON在线编辑器](http://www.bejson.com/jsoneditoronline/)（如下图）这个网站对比下左右的对应关系就差不多能理解了。
 
-![](oreo-tutorial-img\9.PNG)
+![9.PNG](https://i.loli.net/2019/11/02/MyAx39VfqJZgCri.png)
 
-![](oreo-tutorial-img\10.PNG)
+![10.PNG](https://i.loli.net/2019/11/02/eYFMUSlJAIOjwQX.png)
 
 app.json文件的内容如上图，pages属性里的第一个值（目前是"pages/index/index"）就是小程序启动时展示的首页了。
 
@@ -125,11 +122,11 @@ Page({
 
 当你按下`Ctrl+S`时就会保存文件修改并重新加载预览，现在它变成空白的了，变成了一切开始的状态（笑）
 
-![](oreo-tutorial-img\11.PNG)
+![11.PNG](https://i.loli.net/2019/11/02/jEMmRpInebBHxQh.png)
 
 现在把这个项目里附带的三张图导入到这个项目中，放在`pages/index/img`目录下（你可以在目录结构部分点击右键然后选择“硬盘打开”就可以在文件管理器中打开相应的目录了，在index目录下建一个img目录并把那三张图放进去就行）
 
-![](oreo-tutorial-img\12.PNG)
+![12.PNG](https://i.loli.net/2019/11/02/GWsIuVSR54XnPKT.png)
 
 当你导入完成后目录结构应该是这样的（顺便一提，各个分区的大小是可以通过拖拽边缘来调整的，我这里把consol区向下拉了点，以便相对完整地看一下oreo的O）
 
@@ -157,7 +154,7 @@ Page({
 </view>
 ```
 
-![](oreo-tutorial-img\13.PNG)
+![13.PNG](https://i.loli.net/2019/11/02/XhHkrVzeU5YAayp.png)
 
 按下`Ctrl+S`保存并重新加载预览后就能看见可爱的oreo啦，不过由于没有给它们指定样式，所以它们并没有那么美观地摞在一起，接下来是css时间
 
@@ -192,7 +189,7 @@ Page({
 }
 ```
 
-![](oreo-tutorial-img\14.PNG)
+![14.PNG](https://i.loli.net/2019/11/02/VY8wu4zqJNeStbL.png)
 
 奥利奥叠起来啦！呃……先不要在意层叠次序，我们先注意一下`paddimg: 5vh`，vh是个啥？基本上……你可以把它当作某种em，它会根据用户屏幕分辨率决定一个元素有多大，所以如果不要求特别精确，使用vh是个好选择
 
@@ -202,7 +199,7 @@ flex布局可以很容易地处理元素排布并自动使其中的元素（被�
 
 现在我们再把关注点移到这个不靠谱的层叠顺序上吧。我们并不想让下层oreo的图层显示在上层的图层上面，所以怎么办？去互联网上找一下吧！通常情况下，使用以空格分隔的关键词进行搜索（比如“css 层叠顺序”）往往比使用一句完整的话（比如“如何使用css修改html元素的层叠顺序”）进行搜索效果更好，因为这样更符合搜索引擎的工作方式（按词进行匹配）。不过在这个问题中由于我们的问题非常明确，这两种搜索方式得到的结果差别并不是很大，但有些时候后者更倾向于得到知乎和百度知道之类的结果
 
-![](oreo-tutorial-img\15.PNG)
+![15.PNG](https://i.loli.net/2019/11/02/mvVQ3L8T6Hkyntj.png)
 
 啊哈！第一个就是我们想要的，现在我们知道使用`z-index`就可以修正oreo的层叠顺序了！不过由于每层oreo的`z-index`都不同，所以不能使用类进行指定了，转而在wxml里对单个元素进行指定。
 
@@ -228,17 +225,17 @@ flex布局可以很容易地处理元素排布并自动使其中的元素（被�
 </view>
 ```
 
-![](oreo-tutorial-img\16.PNG)
+![16.PNG](https://i.loli.net/2019/11/02/bXmK6DlHBqWApEf.png)
 
 现在oreo的层叠顺序对劲了！注意到了吗，画圈的部分，我们为每层oreo指定了一个z轴次序，值越大的元素就会显示在越上层
 
 现在我们可以稍微再修改下oreo层的view的高度让每层oreo看起来像是贴合在一起而不是分散开的。经测试当height为5vh时效果相对最好，不过似乎馅过高了……哦，刚刚只调了饼干和馅的宽度，但忘记调他们的高度了！
 
-![](oreo-tutorial-img\17.PNG)
+![17.PNG](https://i.loli.net/2019/11/02/7hnt3pY2GPyXIud.png)
 
 在添加上高度限制后，一个完美的oreo出炉了！
 
-![](oreo-tutorial-img\18.PNG)
+![18.PNG](https://i.loli.net/2019/11/02/nqDbfAeypGjF3r6.png)
 
 OK，你现在已经知道了如何使用类似开发静态html网页的方式制作静态微信小程序页面了。
 
@@ -313,7 +310,7 @@ Page({
 ```
 很明显oreo是一个以字典（dict，有些语言里，比如golang，叫它map）为元素的列表（list，可以理解为一个大小可变的数组）。值得一提的是，在index.wxml里并没有使用`oreo_layer["code"]`这样的字典式写法，而是用了`oreo_layer.code`这样的对象式写法。这里纯粹是个人喜好以及js的对象字典边界模糊的原因（不过一般都是把它当对象使用的，毕竟写起来方便），对js对象与字典的关系感兴趣的可以自行查找相关资料（直接搜“js 对象 字典”就行）。
 
-![](oreo-tutorial-img\19.PNG)
+![19.PNG](https://i.loli.net/2019/11/02/dEvnK7UqZawijub.png)
 
 是我喜欢的orereo（笑），顺便一提，我发现还是把`.oreo`这个class的height设为6vh比较好，这样能看到每层之间的缝。
 
@@ -551,7 +548,7 @@ Page({
 
 现在`Ctrl+S`，制作你自己的奥利奥吧！
 
-![](oreo-tutorial-img\20.PNG)
+![20.PNG](https://i.loli.net/2019/11/02/bu7QetBwG4rEOUd.png)
 
 orereo赛高！顺便贴心（？）地标注了console的位置（笑）
 
