@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<image class="bgdimg" style="background-image:url({{image_url}});z-index:-1" ></image>
+<view class="body" >
+  <form bindsubmit="bindCommentSubmit">
+    <textarea placeholder="oreo" bindinput="bindOreoInput" name="oreo_input"></textarea>
+    <button form-type="submit"> Get my {{oreo_str}} </button>
+  </form>
+  <view class="message">{{message}}</view>
+  <view class="oreo">
+    <view wx:for="{{oreo}}" wx:for-index="index" wx:for-item="oreo_item" wx:key="id" class="oreo-layer" style="z-index:{{oreo_item.z_index}}">
+      <image wx:if="{{oreo_item.code==0}}" src="/images/O.png" class="oreo-o"></image>
+      <image wx:elif="{{oreo_item.code==1}}" src="/images/R.png" class="oreo-re"></image>
+      <image wx:elif="{{oreo_item.code==2}}" src="/images/Ob.png" class="oreo-o"></image>
+      <text wx:else>error</text>
+    </view>
+  </view>
+
+</view>

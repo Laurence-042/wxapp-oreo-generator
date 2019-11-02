@@ -1,0 +1,43 @@
+/**index.wxss**/
+.body{
+  /**为元素设置边距，毕竟紧贴边框的oreo看起来不太好**/
+  padding: 5vh
+}
+
+textarea{
+  background: #eee;
+  color: #444;
+  width: 100%;
+}
+
+.message{
+  background: #eee;
+  text-align: center;
+  margin: 5vh;
+  padding: 1vh;
+}
+
+.oreo{
+  /**使用flex布局排列每层oreo**/
+  display: flex;
+  /**排列方向为按列排列**/
+  flex-direction: column;
+  /**垂直于主轴方向（由于是按列排列，所以主轴是上下的）的对齐为居中对齐**/
+  align-items: center;
+}
+
+.oreo-layer {
+  /**让包裹每层oreo的view更小，这样每层oreo在保持大小的前提下占的垂直位置就会变小，结果就是可以让每层oreo叠在一起**/
+  height: 6vh;
+}
+
+.oreo-o {
+  /**饼干应该比馅大点**/
+  height: 50h;
+  width: 50vh;
+}
+
+.oreo-re {
+  height: 45vh;
+  width: 45vh;
+}

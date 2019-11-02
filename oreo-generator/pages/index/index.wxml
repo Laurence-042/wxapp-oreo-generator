@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="body">
+  <!-- 当按下提交按钮时触发bindCommentSubmit函数 -->
+  <form bindsubmit="bindCommentSubmit">
+    <!-- 默认以oreo占位，当进行输入时触发bindOreoInput函数，按下提交按钮后传到bindCommentSubmit函数里的数据对象e可以使用e.detail.value.oreo_input来获取这个textarea里的内容 -->
+    <textarea placeholder="oreo" bindinput="bindOreoInput" name="oreo_input"></textarea>
+    <button form-type="submit"> Get my {{oreo_str}} </button>
+  </form>
+  <view class="message">{{message}}</view>
+  <view class="oreo">
+    <!-- 把之前的三个重复的view使用wx:for实现。遍历oreo属性，将oreo属性里的每个元素称作oreo_layer。将z-index设为oreo_layer的属性z的值 -->
+    <view class="oreo-layer" wx:for="{{oreo}}" wx:for-item="oreo_layer" style="z-index:{{oreo_layer.z}}">
+      <!-- 根据oreo_layer的属性code的值决定使用哪个图片，0为上层饼干，1为夹心，2为下层饼干 -->
+      <!-- 用复制粘贴时别忘了修改class和src，以及注意wx:if还是wx:elif -->
+      <image class="oreo-o" wx:if="{{oreo_layer.code==0}}" src="img/O.png"></image>
+      <image class="oreo-re" wx:elif="{{oreo_layer.code==1}}" src="img/R.png"></image>
+      <image class="oreo-o" wx:elif="{{oreo_layer.code==2}}" src="img/Ob.png"></image>
+    </view>
+  </view>
+</view>

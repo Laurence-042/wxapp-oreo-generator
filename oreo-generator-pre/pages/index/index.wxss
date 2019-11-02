@@ -1,0 +1,44 @@
+/**index.wxss**/
+
+.body{
+  padding: 5vh;
+}
+
+.bgdimg{
+  position: fixed;
+  width: 100%;
+  height: 150vh;
+}
+
+textarea{
+  background: #444;
+  color: #eee;
+  width: 100%;
+}
+
+.message{
+  background: #eee;
+  text-align: center;
+  margin: 5vh;
+  padding: 1vh;
+}
+
+.oreo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oreo-layer {
+  height: 20vh;
+  margin-bottom: -14vh;
+}
+
+.oreo-o {
+  width: 50vh;
+}
+
+.oreo-re {
+  width: 45vh;
+  margin-top: -3vh;
+}
